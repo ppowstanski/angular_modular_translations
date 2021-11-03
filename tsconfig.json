@@ -19,7 +19,21 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@app/configuration": [
+        "./src/app/configuration"
+      ],
+      "@app/core": [
+        "./src/app/core"
+      ],
+      "@app/main": [
+        "./src/app/main"
+      ],
+      "@app/shared": [
+        "./src/app/shared"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

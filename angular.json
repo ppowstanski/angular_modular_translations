@@ -28,7 +28,27 @@
             "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*.*",
+                "input": "src/app/core/i18n/common",
+                "output": "assets/i18n/common"
+              },
+              {
+                "glob": "**/*.*",
+                "input": "src/app/main/i18n",
+                "output": "assets/i18n/main"
+              },
+              {
+                "glob": "**/*.*",
+                "input": "src/app/features/feature-one/i18n",
+                "output": "assets/i18n/feature-one"
+              },
+              {
+                "glob": "**/*.*",
+                "input": "src/app/features/feature-two/i18n",
+                "output": "assets/i18n/feature-two"
+              }
             ],
             "styles": [
               "src/styles.sass"
@@ -96,7 +116,27 @@
             "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*.*",
+                "input": "src/app/core/i18n/common",
+                "output": "assets/i18n/common"
+              },
+              {
+                "glob": "**/*.*",
+                "input": "src/app/main/i18n",
+                "output": "assets/i18n/main"
+              },
+              {
+                "glob": "**/*.*",
+                "input": "src/app/features/feature-one/i18n",
+                "output": "assets/i18n/feature-one"
+              },
+              {
+                "glob": "**/*.*",
+                "input": "src/app/features/feature-two/i18n",
+                "output": "assets/i18n/feature-two"
+              }
             ],
             "styles": [
               "src/styles.sass"
