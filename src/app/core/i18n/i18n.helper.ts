@@ -39,7 +39,7 @@ export class I18nHelper {
   }
 
   private static getLanguage(translateService: TranslateService): string {
-    const browserLang = translateService.getBrowserLang();
+    const browserLang = translateService.getBrowserLang() || ''
     return browserLang.match(/en|fr/) ? browserLang : AppLanguage.En.toString();
   }
 }

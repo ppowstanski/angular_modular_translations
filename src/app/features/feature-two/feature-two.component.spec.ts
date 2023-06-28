@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FeatureTwoComponent } from './feature-two.component';
+import {FeatureTwoComponent} from './feature-two.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('FeatureTwoComponent', () => {
   let component: FeatureTwoComponent;
@@ -8,9 +9,10 @@ describe('FeatureTwoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FeatureTwoComponent ]
+      declarations: [FeatureTwoComponent],
+      imports: [TranslateModule.forRoot()]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

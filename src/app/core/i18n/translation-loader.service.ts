@@ -1,4 +1,3 @@
-import {Injectable} from '@angular/core';
 import {TranslateLoader} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
 import {forkJoin, Observable} from 'rxjs';
@@ -11,15 +10,15 @@ export class TranslationLoaderService extends TranslateLoader {
     super();
   }
 
-  getTranslation(lang: string): Observable<any> {
-    return forkJoin({
-      moduleTranslation: this.http.get(TranslationLoaderHelper.createModuleI18nPath(this.moduleName, lang)),
-      commonTranslation: this.http.get(TranslationLoaderHelper.createCommonI18nPath(lang))
-    }).pipe(
-      map((translation: { moduleTranslation: any, commonTranslation: any }) => Object.assign(
+  getTranslation(lang: string): Observable<Record<string, string>> {
+    return forkJoin([
+      this.http.get<Record<string, string>>(TranslationLoaderHelper.createModuleI18nPath(this.moduleName, lang)),
+      this.http.get<Record<string, string>>(TranslationLoaderHelper.createCommonI18nPath(lang))
+    ]).pipe(
+      map(([moduleTranslation, commonTranslation]) => Object.assign(
         {},
-        translation.commonTranslation,
-        translation.moduleTranslation
+        commonTranslation,
+        moduleTranslation
       ))
     );
   }
